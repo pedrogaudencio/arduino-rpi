@@ -13,7 +13,7 @@ class Portal(object):
             connection = SerialManager()
             self.gate = ArduinoApi(connection=connection)
         except Exception as e:
-            print("Failed to connect to Arduino. {}".format(e.message))
+            print("Failed to connect to Arduino. {}".format(e))
             fallback() if fallback else exit(0)
 
     def loop(self, run, fallback=None):
